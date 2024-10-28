@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScreenChecker : MonoBehaviour
 {
@@ -11,11 +12,32 @@ public class ScreenChecker : MonoBehaviour
     void Start()
     {
         // Lấy camera chính của game
+        /*if (_mainCamera == null)
+        {
+            _mainCamera = Camera.main;
+
+            _screenHalfHeight = _mainCamera.orthographicSize / 8f;
+        }*/
         _mainCamera = Camera.main;
 
         // Tính toán nửa chiều cao của màn hình theo đơn vị thế giới
         _screenHalfHeight = _mainCamera.orthographicSize / 8f; // Đây là nửa chiều cao màn hình
     }
+
+    /*void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        _mainCamera = Camera.main;
+    }*/
 
     // Hàm để kiểm tra vị trí của chim so với nửa chiều cao màn hình
     public bool IsBirdBelowHalfScreen(Vector3 birdPosition)
