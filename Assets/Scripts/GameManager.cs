@@ -1,28 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public FlappyBird bird;
     public Pipe pipes;
-    //[SerializeField] TopPipe topPipe;
 
-    //public Rect pipeTopRect;
-    
+    public GameObject startButton;
+
+    public Text gameOverCountdown;
+    public float countTimer = 5f;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        gameOverCountdown.gameObject.SetActive(false);
+        Time.timeScale = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (CheckCollision())
+        GameOver();
+
+        gameOverCountdown.text = "Restarting in " + (countTimer).ToString("0");
+
+        if (countTimer < 0)
         {
-            Debug.Log("Thua");
-            Time.timeScale = 0;
+            RestartGame();
         }
     }
 
@@ -37,5 +47,30 @@ public class GameManager : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void GameOver()
+    {
+        if (CheckCollision())
+        {
+            Debug.Log("Thua");
+            /*gameOverCountdown.gameObject.SetActive(true);
+            countTimer -= Time.unscaledDeltaTime;*/
+
+            gameOverCountdown.gameObject.SetActive(true);
+            countTimer -= Time.unscaledDeltaTime;
+            Time.timeScale = 0;
+        }
+    }
+
+    public void StartGame()
+    {
+        startButton.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0);
     }
 }
