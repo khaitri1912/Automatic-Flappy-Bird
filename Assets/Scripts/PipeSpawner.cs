@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PipeSpawner : MonoBehaviour
 {
-    /*public GameObject pipePrefab;
+    public GameObject pipePrefab;
     public float spawnInterval = 8f;
     public float pipeGap = 2f;
 
@@ -28,9 +28,9 @@ public class PipeSpawner : MonoBehaviour
 
         // Tạo ống trên và ống dưới
         Instantiate(pipePrefab, PipePosition, Quaternion.identity);
-    }*/
+    }
 
-    public float queueTime = 1.5f;
+    /*public float queueTime = 1.5f;
     private float time = 0;
     public GameObject obstacle;
 
@@ -50,5 +50,5 @@ public class PipeSpawner : MonoBehaviour
         }
 
         time += Time.deltaTime;
-    }
+    }*/
 }
