@@ -12,9 +12,7 @@ public class Pipe : MonoBehaviour
     void Start()
     {
         GameObject pipeTop = GameObject.FindGameObjectWithTag("PipeTop");
-        GameObject pipeDown = GameObject.FindGameObjectWithTag("PipeDown");/*
-        GameObject pipeTop = GameObject.FindGameObjectWithTag("PipeTop");*/
-        //_PipeTopRect = topPipe.GetTopRect();
+        GameObject pipeDown = GameObject.FindGameObjectWithTag("PipeDown");
         _PipeTopRect = new Rect(transform.position.x, transform.position.y, pipeTop.GetComponent<SpriteRenderer>().bounds.size.x, pipeTop.GetComponent<SpriteRenderer>().bounds.size.y);
         _PipeDownRect = new Rect(transform.position.x, transform.position.y, pipeDown.GetComponent<SpriteRenderer>().bounds.size.x, pipeDown.GetComponent<SpriteRenderer>().bounds.size.y);
     }
@@ -23,13 +21,22 @@ public class Pipe : MonoBehaviour
     private void Update()
     {
         transform.position += Vector3.left * (speed * Time.deltaTime);
+
+        _PipeTopRect.x = transform.position.x - 0.6f;
+        _PipeTopRect.y = transform.position.y + 1.7f;
+
+        _PipeDownRect.x = transform.position.x - 0.6f;
+        _PipeDownRect.y = transform.position.y - 9.1f;
+
+        _PipeDownRect.width = 1.3f;
     }
     
     void OnDrawGizmos()
     {
         if (_PipeTopRect != null)
         {
-            Vector3 topRectPosition = new Vector3(_PipeTopRect.x = transform.position.x + 5.4f, _PipeTopRect.y = transform.position.y + 1.7f, 0);
+
+            Vector3 topRectPosition = new Vector3(_PipeTopRect.x , _PipeTopRect.y, 0);
             Vector3 topRectSize = new Vector3(_PipeTopRect.width = 1.3f, _PipeTopRect.height = 8f, 0);
 
             Gizmos.color = Color.blue;
@@ -39,8 +46,8 @@ public class Pipe : MonoBehaviour
 
         if (_PipeDownRect != null)
         {
-            Vector3 downRectPosition = new Vector3(_PipeDownRect.x = transform.position.x + 5.4f, _PipeDownRect.y = transform.position.y - 9.1f, 0);
-            Vector3 downRectSize = new Vector3(_PipeDownRect.width = 1.3f, _PipeDownRect.height = 8f, 0);
+            Vector3 downRectPosition = new Vector3(_PipeDownRect.x, _PipeDownRect.y, 0);
+            Vector3 downRectSize = new Vector3(_PipeDownRect.width, _PipeDownRect.height = 8f, 0);
 
             Gizmos.color = Color.blue;
 

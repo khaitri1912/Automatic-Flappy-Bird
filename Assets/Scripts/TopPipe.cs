@@ -16,8 +16,6 @@ public class TopPipe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //_TopPipeRect.x = transform.position.x - 0.7f;
-        //_TopPipeRect.y = transform.position.y - 4.1f;*/
     }
 
     public Rect GetTopRect()

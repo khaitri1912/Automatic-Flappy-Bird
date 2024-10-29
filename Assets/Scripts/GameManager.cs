@@ -51,8 +51,6 @@ public class GameManager : MonoBehaviour
         if (CheckCollision())
         {
             Debug.Log("Thua");
-            /*gameOverCountdown.gameObject.SetActive(true);
-            countTimer -= Time.unscaledDeltaTime;*/
 
             gameOverCountdown.gameObject.SetActive(true);
             countTimer -= Time.unscaledDeltaTime;
