@@ -785,9 +785,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 466ddaa4b8b9a494e8027a85c23115e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  queueTime: 5
-  obstacle: {fileID: 5230569658539280178, guid: 6d5d696f11523df4e900d7f94f8ff644, type: 3}
-  height: 2
+  pipePrefab: {fileID: 5230569658539280178, guid: 6d5d696f11523df4e900d7f94f8ff644, type: 3}
+  spawnInterval: 8
+  pipeGap: 2
 --- !u!4 &1775534273
 Transform:
   m_ObjectHideFlags: 0
@@ -1031,7 +1031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5230569658539280178, guid: 6d5d696f11523df4e900d7f94f8ff644, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6572350590585805089, guid: 6d5d696f11523df4e900d7f94f8ff644, type: 3}
       propertyPath: m_LocalPosition.x
