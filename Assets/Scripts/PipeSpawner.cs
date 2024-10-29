@@ -26,7 +26,6 @@ public class PipeSpawner : MonoBehaviour
         float randomHeight = Random.Range(-pipeGap, pipeGap);
         Vector3 PipePosition = new Vector3(transform.position.x, randomHeight + pipeGap / 2, 0);
 
-        // Tạo ống trên và ống dưới
         Instantiate(pipePrefab, PipePosition, Quaternion.identity);
     }
 }

@@ -12,9 +12,7 @@ public class Pipe : MonoBehaviour
     void Start()
     {
         GameObject pipeTop = GameObject.FindGameObjectWithTag("PipeTop");
-        GameObject pipeDown = GameObject.FindGameObjectWithTag("PipeDown");/*
-        GameObject pipeTop = GameObject.FindGameObjectWithTag("PipeTop");*/
-        //_PipeTopRect = topPipe.GetTopRect();
+        GameObject pipeDown = GameObject.FindGameObjectWithTag("PipeDown");
         _PipeTopRect = new Rect(transform.position.x, transform.position.y, pipeTop.GetComponent<SpriteRenderer>().bounds.size.x, pipeTop.GetComponent<SpriteRenderer>().bounds.size.y);
         _PipeDownRect = new Rect(transform.position.x, transform.position.y, pipeDown.GetComponent<SpriteRenderer>().bounds.size.x, pipeDown.GetComponent<SpriteRenderer>().bounds.size.y);
     }
