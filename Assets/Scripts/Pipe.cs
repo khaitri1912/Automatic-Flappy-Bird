@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Pipe : MonoBehaviour
 {
@@ -22,9 +20,9 @@ public class Pipe : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        transform.position += Vector3.left * (speed * Time.deltaTime);
     }
     
     void OnDrawGizmos()
