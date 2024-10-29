@@ -29,26 +29,4 @@ public class PipeSpawner : MonoBehaviour
         // Tạo ống trên và ống dưới
         Instantiate(pipePrefab, PipePosition, Quaternion.identity);
     }
-
-    /*public float queueTime = 1.5f;
-    private float time = 0;
-    public GameObject obstacle;
-
-    public float height;
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (time > queueTime)
-        {
-            GameObject go = Instantiate(obstacle);
-            go.transform.position = transform.position + new Vector3(0, Random.Range(-height, height), 0);
-
-            time = 0.5f;
-
-            Destroy(go, 40);
-        }
-
-        time += Time.deltaTime;
-    }*/
 }
